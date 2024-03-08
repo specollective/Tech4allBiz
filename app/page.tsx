@@ -1,27 +1,25 @@
-// pages/index.js
-
 import styles from "@/app/page.module.css";
 import Footer from "@/app/components/Footer";
-import { getLessonsFormatter } from '@/app/components/mdx-content';
+import { getLessonsFormatterAndSlug } from "@/app/components/mdx-content";
+import Link from "next/link";
 
-export  default async function Home(
-  
-) {
-
-  const lessons = await getLessonsFormatter();
+export default async function Home() {
+  const lessons = await getLessonsFormatterAndSlug();
   return (
     <main className={styles.main}>
       <h1>Lessons</h1>
-    <div>hellooo</div>
-      {/* <ul>
-        {lessons.map(({ slug, title }:any) => (
-          <li key={slug}>
-            <Link href={`/lessons/${slug}`}>
-            {title}
+      <ul>
+        {lessons.map((lesson) => (
+          <li key={lesson.slug}>
+            <Link href={`/${lesson.slug}`}>
+              {lesson.title}
+              {lesson.description}
+              {lesson.lessonTime}
+              {}
             </Link>
           </li>
         ))}
-      </ul> */}
+      </ul>
       <Footer />
     </main>
   );
