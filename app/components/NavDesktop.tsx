@@ -4,7 +4,7 @@ import Logo from "@/public/Tech4allBiz_Logo.svg";
 
 export default function NavDesktop() {
   return (
-    <nav className="flex flex-row justify-between items-center w-full h-[100px]">
+    <nav className="hidden md:flex flex-row justify-between items-center w-full h-[100px]">
       {" "}
       <Link href="/">
         <Image
