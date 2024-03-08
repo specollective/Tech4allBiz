@@ -26,9 +26,9 @@ export default async function LessonPage({
     redirect("/");
   }
   return (
-    <article>
+    <section>
       <h1>{lesson.frontmatter.title}</h1>
       <MDXRemote source={lesson.source} />
-    </article>
+    </section>
   );
 }
