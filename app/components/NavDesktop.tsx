@@ -1,9 +1,20 @@
 import Link from "next/link";
+import Image from "next/image";
+import Logo from "@/public/Tech4allBiz_Logo.svg";
 
 export default function NavDesktop() {
   return (
     <nav className="flex flex-row justify-between items-center w-full h-[100px]">
-      <div>tech4allbiz</div>
+      {" "}
+      <Link href="/">
+        <Image
+          className=""
+          src={Logo}
+          alt="Tech4allBiz Logo"
+          width={150}
+          height={250}
+        />
+      </Link>
       <div className="flex flex-row gap-10">
         <Link
           href="/"
