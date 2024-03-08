@@ -1,5 +1,5 @@
-import styles from "./page.module.css";
-import Footer from "./components/Footer";
+import styles from "@/app/page.module.css";
+import Footer from "@/app/components/Footer";
 
 export default function Home() {
   return (
