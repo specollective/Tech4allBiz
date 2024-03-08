@@ -1,5 +1,4 @@
 import styles from "@/app/page.module.css";
-import Footer from "@/app/components/Footer";
 import { getLessonsFormatterAndSlug } from "@/app/components/mdx-content";
 import Link from "next/link";
 
@@ -20,7 +19,6 @@ export default async function Home() {
           </li>
         ))}
       </ul>
-      <Footer />
     </main>
   );
 }
