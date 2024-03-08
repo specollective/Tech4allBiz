@@ -19,11 +19,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} px-24`}>
-        <NavDesktop />
-        {children}
+      <body className={`${inter.className}`}>
+        <div className="px-24">
+          <NavDesktop />
+          {children}
+        </div>
+        <Footer />
       </body>
-      <Footer />
     </html>
   );
 }
