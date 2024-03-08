@@ -1,5 +1,3 @@
-import { type MDXRemoteSerializeResult } from "next-mdx-remote";
-
 import { promises as fs } from "fs";
 import { serialize } from "next-mdx-remote/serialize";
 import path from "path";
