@@ -11,9 +11,10 @@ type Frontmatter = {
   skillsLearned: string;
 };
 type Lesson = {
-  serialized: MDXRemoteSerializeResult;
+  // serialized: MDXRemoteSerializeResult;
   frontmatter: Frontmatter;
   slug: string;
+  source: string;
 };
 
 type FormattedLesson = {
@@ -49,9 +50,9 @@ export async function getLessons() {
     });
 
     const lesson: Lesson = {
-      serialized: serialized,
       frontmatter: serialized.frontmatter as Frontmatter,
       slug: slug,
+      source: raw,
     };
 
     lessons.push(lesson);

@@ -1,6 +1,7 @@
-import { getLessons } from "../components/mdx-content";
+import { getLessons } from "@/app/components/mdx-content";
 // import Page from "@/app/components/Page";
 import { redirect } from "next/navigation";
+import { MDXRemote } from "next-mdx-remote/rsc";
 
 export async function generateStaticParams() {
   const lessons = await getLessons();
@@ -27,8 +28,7 @@ export default async function LessonPage({
   return (
     <article>
       <h1>{lesson.frontmatter.title}</h1>
-      {/* Render the serialized MDX content */}
-      {/* You'll use MDXRemote here if `lesson.serialized` contains serialized MDX content */}
+      <MDXRemote source={lesson.source} />
     </article>
   );
 }
