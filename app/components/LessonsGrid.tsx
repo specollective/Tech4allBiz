@@ -15,7 +15,7 @@ export default async function LessonsGrid() {
         {lessons.map((lesson) => (
           <div
             key={lesson.slug}
-            className=" flex flex-col gap-5 justify-between border rounded-lg p-4 h-full"
+            className=" flex flex-col gap-5 justify-between border border-[#1282A2] rounded-lg p-4 h-full"
           >
             <div>
               <h2 className="text-lg font-semibold mb-2">
