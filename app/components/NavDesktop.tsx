@@ -7,13 +7,7 @@ export default function NavDesktop() {
     <nav className="hidden md:flex flex-row justify-between items-center w-full h-[100px]">
       {" "}
       <Link href="/">
-        <Image
-          className=""
-          src={Logo}
-          alt="Tech4allBiz Logo"
-          width={150}
-          height={250}
-        />
+        <Image src={Logo} alt="Tech4allBiz Logo" width={150} height={250} />
       </Link>
       <div className="flex flex-row gap-10">
         <Link
