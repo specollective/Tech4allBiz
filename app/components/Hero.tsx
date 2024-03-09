@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Hero = () => {
   return (
     <section className="flex justify-between flex-col md:flex-row w-full md:py-5">
@@ -8,9 +10,12 @@ const Hero = () => {
           tempus tortor aliquet arcu eu. A mauris urna duis euismod.
         </p>
         <div className="flex flex-wrap gap-4">
-          <button className="px-6 py-2 text-black bg-[#F0C808] rounded hover:bg-[#C9A900] transition-colors">
+          <Link
+            href="/#lessons"
+            className="px-6 py-2 text-black bg-[#F0C808] rounded hover:bg-[#C9A900] transition-colors"
+          >
             View Lessons
-          </button>
+          </Link>
           <button className="px-6 py-2 text-black border border-[#0E4873] rounded hover:bg-[#0E4873] hover:text-white transition-colors">
             Free Online Resources
           </button>
