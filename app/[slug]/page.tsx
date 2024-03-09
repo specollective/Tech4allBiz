@@ -1,4 +1,5 @@
 import { getLessons } from "@/app/components/mdx-content";
+import styles from "@/app/page.module.css";
 // import Page from "@/app/components/Page";
 import { redirect } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
@@ -26,9 +27,9 @@ export default async function LessonPage({
     redirect("/");
   }
   return (
-    <section>
+    <main className={styles.main}>
       <h1>{lesson.frontmatter.title}</h1>
       <MDXRemote source={lesson.source} />
-    </section>
+    </main>
   );
 }
