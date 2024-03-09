@@ -4,6 +4,7 @@ import path from "path";
 
 type Frontmatter = {
   title: string;
+  author: string;
   description: string;
   lessonTime: string;
   skillsLearned: string;
@@ -17,6 +18,7 @@ type Lesson = {
 
 type FormattedLesson = {
   slug: string;
+  author: string;
   title: string;
   description: string;
   lessonTime: string;
@@ -62,14 +64,16 @@ export async function getLessons() {
 export async function getLessonsFormatterAndSlug(): Promise<FormattedLesson[]> {
   const lessons = await getLessons();
   const formattedLessons = lessons.map(({ frontmatter, slug }) => {
-    const { title, description, lessonTime, skillsLearned } = frontmatter;
+    const { title, author, description, lessonTime, skillsLearned } =
+      frontmatter;
     const skillsArray = skillsLearned
       .split(/\s+#/)
-      .map((skill) => skill.replace(/^#/, "")); // Remove leading # for each skill
+      .map((skill) => skill.replace(/^#/, ""));
 
     return {
       slug,
       title,
+      author,
       description,
       lessonTime,
       skillsLearned: skillsArray,
