@@ -60,7 +60,8 @@ const MobileNavbar = () => {
 
         <div className="flex flex-col gap-y-5 px-5 py-20">
           <Link href="/">Home</Link>
-          <a href="#">Lessons</a>
+          <Link href="/#lessons">Lessons</Link>
+
           <a href="#">Free Online Resources</a>
         </div>
       </div>

@@ -16,7 +16,12 @@ export default function NavDesktop() {
         >
           Home
         </Link>
-        <div>Lessons</div>
+        <Link
+          href="/#lessons"
+          className="hover:underline hover:underline-offset-4 decoration-2 hover:decoration-[#F0C808]"
+        >
+          Lessons
+        </Link>
         <Link
           href="/"
           className="hover:underline hover:underline-offset-4 decoration-2 hover:decoration-[#F0C808]"
