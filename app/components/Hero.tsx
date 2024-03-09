@@ -1,11 +1,11 @@
 const Hero = () => {
   return (
-    <section className="flex justify-between flex-col md:flex-row w-full py-16">
+    <section className="flex justify-between flex-col md:flex-row w-full md:py-5">
       <div className="basis-1/3 flex flex-col py-8">
         <h1 className="text-[42px] font-bold mb-4">Tech4allBiz</h1>
         <p className="mb-8">
-          Your description here. Keep it brief and informative to maintain the
-          attention of your visitors.
+          Lorem ipsum dolor sit amet consectetur. Pellentesque a quis mauris
+          tempus tortor aliquet arcu eu. A mauris urna duis euismod.
         </p>
         <div className="flex flex-wrap gap-4">
           <button className="px-6 py-2 text-black bg-[#F0C808] rounded hover:bg-[#C9A900] transition-colors">
