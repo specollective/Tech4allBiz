@@ -1,6 +1,8 @@
 import { promises as fs } from "fs";
-import { serialize } from "next-mdx-remote/serialize";
+import { CompileMDXResult, compileMDX } from "next-mdx-remote/rsc";
 import path from "path";
+
+import LessonStep from "./LessonStep";
 
 type Frontmatter = {
   title: string;
@@ -10,10 +12,9 @@ type Frontmatter = {
   skillsLearned: string;
 };
 type Lesson = {
-  // serialized: MDXRemoteSerializeResult;
   frontmatter: Frontmatter;
   slug: string;
-  source: string;
+  compiledContent: CompileMDXResult;
 };
 
 type FormattedLesson = {
@@ -43,16 +44,20 @@ export async function getLessons() {
 
   for (const fileName of fileNames) {
     const filepath = path.join(lessonsDirectory, fileName);
-    const slug = slugify(fileName.replace(/\.mdx$/, ""));
-    const raw = await fs.readFile(filepath, "utf-8");
-    const serialized = await serialize(raw, {
-      parseFrontmatter: true,
+    const slug = slugify(fileName.replace(/\.mdx$/, "-"));
+    const rawMDX = await fs.readFile(filepath, "utf-8");
+    const compiledContent = await compileMDX({
+      source: rawMDX,
+      components: {
+        LessonStep,
+      },
+      options: { parseFrontmatter: true },
     });
 
     const lesson: Lesson = {
-      frontmatter: serialized.frontmatter as Frontmatter,
+      frontmatter: compiledContent.frontmatter as Frontmatter,
       slug: slug,
-      source: raw,
+      compiledContent: compiledContent as CompileMDXResult,
     };
 
     lessons.push(lesson);
