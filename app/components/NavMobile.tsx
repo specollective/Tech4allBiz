@@ -19,7 +19,9 @@ const MobileNavbar = () => {
     <div className="relative md:hidden">
       {/* Hamburger Icon and Logo */}
       <div className="flex justify-between items-center py-4">
-        <Image src={MobileLogo} alt="MobileLogo" className="h-14 w-14" />
+        <Link href="/">
+          <Image src={MobileLogo} alt="MobileLogo" className="h-14 w-14" />
+        </Link>
         <button type="button" onClick={toggleSidebar}>
           <svg
             className="w-6 h-6"

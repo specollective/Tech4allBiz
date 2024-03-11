@@ -1,8 +1,8 @@
+import { redirect } from "next/navigation";
+
 import { getLessons } from "@/app/components/mdx-content";
 import styles from "@/app/page.module.css";
-// import Page from "@/app/components/Page";
-import { redirect } from "next/navigation";
-import { MDXRemote } from "next-mdx-remote/rsc";
+import LessonHero from "@/app/components/LessonHero";
 
 export async function generateStaticParams() {
   const lessons = await getLessons();
@@ -28,8 +28,10 @@ export default async function LessonPage({
   }
   return (
     <main className={styles.main}>
-      <h1>{lesson.frontmatter.title}</h1>
-      <MDXRemote source={lesson.source} />
+      <LessonHero frontmatter={lesson.frontmatter} />
+      <div className="w-full grid grid-cols-1 gap-6 md:grid-cols-2  md:gap-20 justify-items-center">
+        {lesson.compiledContent.content}
+      </div>
     </main>
   );
 }
