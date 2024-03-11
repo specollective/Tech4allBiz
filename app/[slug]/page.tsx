@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 
 import { getLessons } from "@/app/components/mdx-content";
 import styles from "@/app/page.module.css";
+import LessonHero from "@/app/components/LessonHero";
 
 export async function generateStaticParams() {
   const lessons = await getLessons();
@@ -27,8 +28,8 @@ export default async function LessonPage({
   }
   return (
     <main className={styles.main}>
-      <h1>{lesson.frontmatter.title}</h1>
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 justify-items-center">
+      <LessonHero frontmatter={lesson.frontmatter} />
+      <div className="w-full grid grid-cols-1 gap-6 md:grid-cols-2  md:gap-20 justify-items-center">
         {lesson.compiledContent.content}
       </div>
     </main>

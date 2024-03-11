@@ -2,13 +2,14 @@ import { promises as fs } from "fs";
 import { CompileMDXResult, compileMDX } from "next-mdx-remote/rsc";
 import path from "path";
 
-import LessonStep from "./LessonStep";
+import LessonStep from "@/app/components/LessonStep";
 
 type Frontmatter = {
   title: string;
   author: string;
   description: string;
   lessonTime: string;
+  steps: number;
   skillsLearned: string;
 };
 type Lesson = {
@@ -28,15 +29,15 @@ type FormattedLesson = {
 
 function slugify(str: string) {
   return str
-    .toString()
-    .toLowerCase()
+    .replace(/^\d+-/, "") // Remove leading numbers followed by a hyphen (e.g., "1-")
+    .replace(/([a-z])([A-Z])/g, "$1-$2") // Add a hyphen between camelCase words
+    .toLowerCase() // Convert to lowercase
     .trim() // Remove whitespace from both ends of a string
-    .replace(/\s+/g, "-") // Replace spaces with -
+    .replace(/\s+/g, "-") // Replace spaces with hyphens
     .replace(/&/g, "-and-") // Replace & with 'and'
-    .replace(/[^-\w]+/g, "") // Remove all non-word characters except for hyphen
-    .replace(/--+/g, "-"); // Replace multiple - with single hyphen
+    .replace(/[^-\w]+/g, "") // Remove all non-word chars except hyphens
+    .replace(/--+/g, "-"); // Replace multiple hyphens with single hyphen
 }
-
 export async function getLessons() {
   const lessonsDirectory = path.join(process.cwd(), "lessons");
   const fileNames = await fs.readdir(lessonsDirectory);
@@ -44,7 +45,7 @@ export async function getLessons() {
 
   for (const fileName of fileNames) {
     const filepath = path.join(lessonsDirectory, fileName);
-    const slug = slugify(fileName.replace(/\.mdx$/, "-"));
+    const slug = slugify(fileName.replace(/\.mdx$/, ""));
     const rawMDX = await fs.readFile(filepath, "utf-8");
     const compiledContent = await compileMDX({
       source: rawMDX,
