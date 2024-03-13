@@ -36,11 +36,7 @@ const Button = ({
   text,
   children,
 }: ButtonProps) => {
-  const classes = cn(
-    styles.buttonAlignment,
-    styles[variant] || "",
-    className,
-  );
+  const classes = cn(styles.buttonAlignment, styles[variant] || "", className);
 
   return (
     <Link href={href} className={classes}>

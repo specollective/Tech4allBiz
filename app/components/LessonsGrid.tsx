@@ -1,8 +1,8 @@
-import Link from "next/link";
 import Image from "next/image";
 
 import Clock from "@/public/clock.svg";
 import getFrontmatterSlug from "@/app/utils/getFrontmatterSlug";
+import Button from "@/app/ui/Buttons";
 
 const styles = {
   container: "py-8",
@@ -40,9 +40,11 @@ export default async function LessonsGrid() {
               </div>
               <p className={styles.lessonDescription}>{lesson.description}</p>
             </div>
-            <Link href={`/${lesson.slug}`} className={styles.visitLessonLink}>
-              Visit Lesson Page
-            </Link>
+            <Button
+              href={`/${lesson.slug}`}
+              variant="primary"
+              text="Visit Lesson Page"
+            />
           </div>
         ))}
       </div>

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Button from "@/app/ui/Buttons";
 
 const styles = {
   container: "flex justify-between flex-col md:flex-row w-full md:py-5",
@@ -6,10 +6,6 @@ const styles = {
   heading: "text-[42px] font-bold mb-4",
   paragraph: "mb-8",
   buttonContainer: "flex flex-wrap gap-4",
-  viewLessonsLink:
-    "px-6 py-2 text-black bg-[#F0C808] rounded hover:bg-[#C9A900] transition-colors",
-  freeResourcesButton:
-    "px-6 py-2 text-black border border-[#0E4873] rounded hover:bg-[#0E4873] hover:text-white transition-colors",
   rightColumn: "border basis-1/2 flex",
   videoIframe: "w-full h-auto aspect-video",
 };
@@ -24,12 +20,8 @@ const LandingHero = () => {
           tempus tortor aliquet arcu eu. A mauris urna duis euismod.
         </p>
         <div className={styles.buttonContainer}>
-          <Link href="/#lessons" className={styles.viewLessonsLink}>
-            View Lessons
-          </Link>
-          <button className={styles.freeResourcesButton}>
-            Free Online Resources
-          </button>
+          <Button href="/#lessons" variant="lessons" text="View Lessons" />
+          <Button href="#" variant="secondary" text="Free Online Resources" />
         </div>
       </div>
       <div className={styles.rightColumn}>
