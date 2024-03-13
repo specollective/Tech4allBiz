@@ -5,30 +5,39 @@ import Image from "next/image";
 import MobileLogo from "@/public/Mobile_Logo.svg";
 import Link from "next/link";
 
+const styles = {
+  container: "relative md:hidden",
+  header: "flex justify-between items-center py-4",
+  logo: "h-14 w-14",
+  hamburgerIcon: "w-6 h-6",
+  sidebar:
+    "fixed right-0 top-0 w-64 h-full bg-[#117D9C] text-white transform transition-transform duration-300 ease-in-out",
+  sidebarOpen: "translate-x-0",
+  sidebarClosed: "translate-x-full",
+  closeButton: "absolute top-0 right-0 p-4",
+  closeButtonIcon: "w-6 h-6",
+  navItems: "flex flex-col gap-y-5 px-5 py-20",
+};
+
 const MobileNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
-  const closeSidebar = () => {
-    setIsOpen(false);
-  };
+  const toggleSidebar = () => setIsOpen(!isOpen);
+  const closeSidebar = () => setIsOpen(false);
 
   return (
-    <div className="relative md:hidden">
-      {/* Hamburger Icon and Logo */}
-      <div className="flex justify-between items-center py-4">
+    <div className={styles.container}>
+      <div className={styles.header}>
         <Link href="/">
-          <Image src={MobileLogo} alt="MobileLogo" className="h-14 w-14" />
+          <Image src={MobileLogo} alt="Mobile Logo" className={styles.logo} />
         </Link>
-        <button type="button" onClick={toggleSidebar}>
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
+        <button
+          type="button"
+          onClick={toggleSidebar}
+          className={styles.hamburgerIcon}
+        >
+          {/* SVG for hamburger icon remains as is, styled by `styles.hamburgerIcon` */}
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -39,18 +48,12 @@ const MobileNavbar = () => {
         </button>
       </div>
 
-      {/* Sidebar */}
       <div
-        className={`${isOpen ? "translate-x-0" : "translate-x-full"} fixed right-0 top-0 w-64 h-full bg-[#117D9C] text-white transform transition-transform duration-300 ease-in-out`}
+        className={`${isOpen ? styles.sidebarOpen : styles.sidebarClosed} ${styles.sidebar}`}
       >
-        {/* Close Button */}
-        <button onClick={closeSidebar} className="absolute top-0 right-0 p-4">
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
+        <button onClick={closeSidebar} className={styles.closeButton}>
+          {/* SVG for close button remains as is, styled by `styles.closeButton` */}
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -60,10 +63,9 @@ const MobileNavbar = () => {
           </svg>
         </button>
 
-        <div className="flex flex-col gap-y-5 px-5 py-20">
+        <div className={styles.navItems}>
           <Link href="/">Home</Link>
           <Link href="/#lessons">Lessons</Link>
-
           <a href="#">Free Online Resources</a>
         </div>
       </div>
