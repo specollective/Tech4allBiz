@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { getLessons } from "@/app/utils/getLessons";
 import styles from "@/app/page.module.css";
 import LessonHero from "@/app/components/LessonHero";
+import Skills from "@/app/components/Skills";
 
 const containerStyle =
   "w-full grid grid-cols-1 gap-6 md:grid-cols-2  md:gap-20 justify-items-center";
@@ -32,7 +33,10 @@ export default async function LessonPage({
   return (
     <main className={styles.main}>
       <LessonHero frontmatter={lesson.frontmatter} />
-      <div className={containerStyle}>{lesson.compiledContent.content}</div>
+      <section className={containerStyle}>
+        {lesson.compiledContent.content}
+      </section>
+      <Skills skillsLearned={lesson.frontmatter.skillsLearned} />
     </main>
   );
 }
