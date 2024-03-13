@@ -1,5 +1,6 @@
-import { getLessons } from "./getLessons";
+import { getLessons } from "@/app/utils/getLessons";
 
+import { getSkillsArray } from "@/app/utils/getSkillsArray";
 import { FormattedLesson } from "@/app/constants/types";
 
 export default async function getLessonsFormatterAndSlug(): Promise<
@@ -9,10 +10,7 @@ export default async function getLessonsFormatterAndSlug(): Promise<
   const formattedLessons = lessons.map(({ frontmatter, slug }) => {
     const { title, author, description, lessonTime, skillsLearned } =
       frontmatter;
-    const skillsArray = skillsLearned
-      .split(/\s+#/)
-      .map((skill) => skill.replace(/^#/, ""));
-
+    const skillsArray = getSkillsArray(skillsLearned);
     return {
       slug,
       title,

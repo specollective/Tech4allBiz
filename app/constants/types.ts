@@ -34,3 +34,7 @@ export type LessonStepProps = {
   embedURL: string;
   step: string;
 };
+
+export type SkillsProp = {
+  skillsTags: string;
+};
