@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import Clock from "@/public/clock.svg";
-import { getLessonsFormatterAndSlug } from "@/app/components/mdx-content";
+import getFrontmatterSlug from "@/app/utils/getFrontmatterSlug";
 
 const styles = {
   container: "py-8",
@@ -21,7 +21,7 @@ const styles = {
 };
 
 export default async function LessonsGrid() {
-  const lessons = await getLessonsFormatterAndSlug();
+  const lessons = await getFrontmatterSlug();
   return (
     <div id="lessons" className={styles.container}>
       <div className={styles.header}>

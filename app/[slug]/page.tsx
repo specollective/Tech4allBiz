@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 
-import { getLessons } from "@/app/components/mdx-content";
+import { getLessons } from "@/app/utils/getLessons";
 import styles from "@/app/page.module.css";
 import LessonHero from "@/app/components/LessonHero";
 
