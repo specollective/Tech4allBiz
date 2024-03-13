@@ -36,5 +36,5 @@ export type LessonStepProps = {
 };
 
 export type SkillsProp = {
-  skillsLearned: string;
+  skillsTags: string;
 };

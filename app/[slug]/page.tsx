@@ -3,10 +3,14 @@ import { redirect } from "next/navigation";
 import { getLessons } from "@/app/utils/getLessons";
 import styles from "@/app/page.module.css";
 import LessonHero from "@/app/components/LessonHero";
-import Skills from "@/app/components/Skills";
+import SkillsLearned from "@/app/components/SkillsLearned";
+import Button from "../ui/Buttons";
 
-const containerStyle =
-  "w-full grid grid-cols-1 gap-6 md:grid-cols-2  md:gap-20 justify-items-center";
+const pageStyle = {
+  container:
+    "w-full grid grid-cols-1 gap-6 md:grid-cols-2  md:gap-20 justify-items-center",
+  btnsContainer: "w-full flex gap-4 justify-items-left",
+};
 
 export async function generateStaticParams() {
   const lessons = await getLessons();
@@ -33,10 +37,14 @@ export default async function LessonPage({
   return (
     <main className={styles.main}>
       <LessonHero frontmatter={lesson.frontmatter} />
-      <section className={containerStyle}>
+      <section className={pageStyle.container}>
         {lesson.compiledContent.content}
       </section>
-      <Skills skillsLearned={lesson.frontmatter.skillsLearned} />
+      <SkillsLearned skillsTags={lesson.frontmatter.skillsLearned} />
+      <section className={pageStyle.btnsContainer}>
+        <Button variant="lessons" text="View More Lesson" href="/#lessons" />
+        <Button variant="secondary" text="Free Online Resources" href="/#" />
+      </section>
     </main>
   );
 }
