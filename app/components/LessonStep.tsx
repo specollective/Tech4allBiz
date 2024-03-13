@@ -1,10 +1,11 @@
-import React from "react";
+import { LessonStepProps } from "@/app/constants/types";
 
-type LessonStepProps = {
-  title: string;
-  description: string;
-  embedURL: string;
-  step: string;
+const styles = {
+  container: "flex flex-col gap-y-2 justify-between w-full h-auto",
+  stepTitle: "text-2xl font-semibold",
+  lessonTitle: "text-gray-800 text-lg font-semibold",
+  description: "mt-2 text-gray-600",
+  videoIframe: "w-full aspect-video",
 };
 
 export default function LessonStep({
@@ -14,14 +15,14 @@ export default function LessonStep({
   step,
 }: LessonStepProps) {
   return (
-    <div className="flex flex-col gap-y-2 justify-between w-full h-auto">
+    <div className={styles.container}>
       <div>
-        <h1 className="text-2xl font-semibold">Step {step}</h1>
-        <h2 className="text-gray-800 text-lg font-semibold">{title}</h2>
-        <p className="mt-2 text-gray-600">{description}</p>
+        <h1 className={styles.stepTitle}>Step {step}</h1>
+        <h2 className={styles.lessonTitle}>{title}</h2>
+        <p className={styles.description}>{description}</p>
       </div>
       <iframe
-        className="w-full aspect-video"
+        className={styles.videoIframe}
         src={embedURL}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen

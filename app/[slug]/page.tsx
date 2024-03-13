@@ -4,6 +4,9 @@ import { getLessons } from "@/app/components/mdx-content";
 import styles from "@/app/page.module.css";
 import LessonHero from "@/app/components/LessonHero";
 
+const containerStyle =
+  "w-full grid grid-cols-1 gap-6 md:grid-cols-2  md:gap-20 justify-items-center";
+
 export async function generateStaticParams() {
   const lessons = await getLessons();
 
@@ -29,9 +32,7 @@ export default async function LessonPage({
   return (
     <main className={styles.main}>
       <LessonHero frontmatter={lesson.frontmatter} />
-      <div className="w-full grid grid-cols-1 gap-6 md:grid-cols-2  md:gap-20 justify-items-center">
-        {lesson.compiledContent.content}
-      </div>
+      <div className={containerStyle}>{lesson.compiledContent.content}</div>
     </main>
   );
 }

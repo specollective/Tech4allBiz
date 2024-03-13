@@ -1,12 +1,12 @@
 import styles from "@/app/page.module.css";
-import Hero from "@/app/components/LandingHero";
-import LessonsGrid from "./components/LessonsGrid";
-import SponsorsRow from "./components/Sponsors";
+import LandingHero from "@/app/components/LandingHero";
+import LessonsGrid from "@/app/components/LessonsGrid";
+import SponsorsRow from "@/app/components/Sponsors";
 
 export default async function Home() {
   return (
     <main className={styles.main}>
-      <Hero />
+      <LandingHero />
       <LessonsGrid />
       <SponsorsRow />
     </main>

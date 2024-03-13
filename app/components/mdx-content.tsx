@@ -3,29 +3,7 @@ import { CompileMDXResult, compileMDX } from "next-mdx-remote/rsc";
 import path from "path";
 
 import LessonStep from "@/app/components/LessonStep";
-
-type Frontmatter = {
-  title: string;
-  author: string;
-  description: string;
-  lessonTime: string;
-  steps: number;
-  skillsLearned: string;
-};
-type Lesson = {
-  frontmatter: Frontmatter;
-  slug: string;
-  compiledContent: CompileMDXResult;
-};
-
-type FormattedLesson = {
-  slug: string;
-  author: string;
-  title: string;
-  description: string;
-  lessonTime: string;
-  skillsLearned: string[];
-};
+import { Frontmatter, Lesson, FormattedLesson } from "@/app/constants/types";
 
 function slugify(str: string) {
   return str
