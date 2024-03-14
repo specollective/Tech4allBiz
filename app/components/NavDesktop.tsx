@@ -23,7 +23,7 @@ export default function NavDesktop() {
         <Link href="/#lessons" className={styles.linkStyle}>
           Lessons
         </Link>
-        <Link href="/" className={styles.linkStyle}>
+        <Link href="/online-resources" className={styles.linkStyle}>
           Free Online Resources
         </Link>
       </div>

@@ -66,7 +66,7 @@ const MobileNavbar = () => {
         <div className={styles.navItems}>
           <Link href="/">Home</Link>
           <Link href="/#lessons">Lessons</Link>
-          <a href="#">Free Online Resources</a>
+          <Link href="/online-resources">Free Online Resources</Link>
         </div>
       </div>
     </div>

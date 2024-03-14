@@ -4,7 +4,7 @@ import { getLessons } from "@/app/utils/getLessons";
 import styles from "@/app/page.module.css";
 import LessonHero from "@/app/components/LessonHero";
 import SkillsLearned from "@/app/components/SkillsLearned";
-import Button from "../ui/Buttons";
+import Button from "@/app/ui/Buttons";
 
 const pageStyle = {
   container:
