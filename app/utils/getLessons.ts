@@ -2,7 +2,7 @@ import { promises as fs } from "fs";
 import { CompileMDXResult, compileMDX } from "next-mdx-remote/rsc";
 import path from "path";
 
-import LessonStep from "@/app/components/LessonStep";
+import LessonStep from "@/app/components/lesson/LessonStep";
 import slugify from "@/app/utils/slugify";
 import { Frontmatter, Lesson } from "@/app/constants/types";
 
