@@ -11,13 +11,13 @@ const styles = {
   gridContainer: "grid grid-cols-1 md:grid-cols-3 gap-6",
   lessonCard:
     "flex flex-col gap-5 justify-between border border-[#1282A2] rounded-lg p-4 h-full",
-  lessonHeader: "text-lg font-semibold mb-2",
-  lessonTimeContainer: "flex flex-row gap-3",
-  lessonTime: "text-sm text-black py-4",
-  lessonDescription:
-    "flex-grow text-ellipsis overflow-hidden h-40 line-clamp-6",
-  visitLessonLink:
-    "w-fit mt-auto inline-block bg-[#1282A2] text-white py-2 px-4 rounded hover:bg-[#0E6881] transition-colors text-center",
+  lessonDetails: "flex flex-col",
+  lessonHeader: "basis-16 text-lg font-semibold",
+  lessonTimeContainer:
+    "flex flex-row justify-between gap-3 items-center py-3 text-sm text-black font-medium",
+  lessonTime: "flex flex-row gap-2 items-center",
+  lessonDescription: "line-clamp-3",
+  lessonLink: "pt-3",
 };
 
 export default async function LessonsGrid() {
@@ -30,21 +30,24 @@ export default async function LessonsGrid() {
       <div className={styles.gridContainer}>
         {lessons.map((lesson) => (
           <div key={lesson.slug} className={styles.lessonCard}>
-            <div>
-              <h2 className={styles.lessonHeader}>
-                {lesson.title} - by {lesson.author}
-              </h2>
+            <div className={styles.lessonDetails}>
+              <h2 className={styles.lessonHeader}>{lesson.title}</h2>
               <div className={styles.lessonTimeContainer}>
-                <Image src={Clock} alt="Clock" />
-                <p className={styles.lessonTime}>{lesson.lessonTime}</p>
+                By: {lesson.author}
+                <div className={styles.lessonTime}>
+                  <Image src={Clock} alt="Clock" />
+                  <p>{lesson.lessonTime}</p>
+                </div>
               </div>
               <p className={styles.lessonDescription}>{lesson.description}</p>
             </div>
-            <Button
-              href={`/${lesson.slug}`}
-              variant="primary"
-              text="Visit Lesson Page"
-            />
+            <div className={styles.lessonLink}>
+              <Button
+                href={`/${lesson.slug}`}
+                variant="primary"
+                text="Lesson Details"
+              />
+            </div>
           </div>
         ))}
       </div>
