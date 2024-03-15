@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  distDir: "build",
+};
 
 if (process.env.NODE_ENV === "production") {
-  nextConfig["distDir"] = "build";
   nextConfig["output"] = "export";
 }
 
