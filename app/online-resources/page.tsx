@@ -1,8 +1,8 @@
 import styles from "@/app/page.module.css";
 import Buttons from "@/app/ui/Buttons";
-import OnlineResourceCard from "@/app/components/OnlineResourceCard";
+import OnlineResourceCard from "@/app/components/onlineResources/OnlineResourceCard";
 import { onlineResources } from "@/app/constants/onlineResources";
-import VideoHostWebPage from "@/app/components/VideoHostWebPages";
+import VideoHostWebPage from "@/app/components/onlineResources/VideoHostWebPages";
 
 const pageStyles = {
   header: "md:basis-2/5 text-3xl bold",

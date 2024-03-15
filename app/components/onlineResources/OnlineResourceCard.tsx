@@ -1,8 +1,4 @@
-type OnlineResourceCardProps = {
-  title: string;
-  description: string;
-  url: string;
-};
+import { OnlineResourceCardProps } from "@/app/constants/types";
 
 const styles = {
   cardContainer: `flex flex-col gap-y-6`,

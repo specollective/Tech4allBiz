@@ -22,6 +22,12 @@ export type FrontmatterProps = {
   frontmatter: Frontmatter;
 };
 
+export type OnlineResourceCardProps = {
+  title: string;
+  description: string;
+  url: string;
+};
+
 export type Lesson = {
   frontmatter: Frontmatter;
   slug: string;
