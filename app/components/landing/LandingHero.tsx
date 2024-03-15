@@ -21,7 +21,11 @@ const LandingHero = () => {
         </p>
         <div className={styles.buttonContainer}>
           <Button href="/#lessons" variant="lessons" text="View Lessons" />
-          <Button href="#" variant="secondary" text="Free Online Resources" />
+          <Button
+            href="/online-resources"
+            variant="secondary"
+            text="Free Online Resources"
+          />
         </div>
       </div>
       <div className={styles.rightColumn}>

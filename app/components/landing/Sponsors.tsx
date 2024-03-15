@@ -19,11 +19,7 @@ const SponsorsRow = () => {
       <div className={styles.sponsorsContainer}>
         {sponsorLogos.map((logo, index) => (
           <div key={index} className={styles.sponsorLogoContainer}>
-            <Image
-              src={logo}
-              alt={`Sponsor Logo ${index + 1}`}
-              layout="fixed"
-            />
+            <Image src={logo} alt={`Sponsor Logo ${index + 1}`} />
           </div>
         ))}
       </div>

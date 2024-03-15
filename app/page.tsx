@@ -1,7 +1,7 @@
 import styles from "@/app/page.module.css";
-import LandingHero from "@/app/components/LandingHero";
-import LessonsGrid from "@/app/components/LessonsGrid";
-import SponsorsRow from "@/app/components/Sponsors";
+import LandingHero from "@/app/components/landing/LandingHero";
+import LessonsGrid from "@/app/components/landing/LessonsGrid";
+import SponsorsRow from "@/app/components/landing/Sponsors";
 
 export default async function Home() {
   return (

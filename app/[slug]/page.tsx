@@ -2,9 +2,9 @@ import { redirect } from "next/navigation";
 
 import { getLessons } from "@/app/utils/getLessons";
 import styles from "@/app/page.module.css";
-import LessonHero from "@/app/components/LessonHero";
-import SkillsLearned from "@/app/components/SkillsLearned";
-import Button from "../ui/Buttons";
+import LessonHero from "@/app/components/lesson/LessonHero";
+import SkillsLearned from "@/app/components/lesson/SkillsLearned";
+import Button from "@/app/ui/Buttons";
 
 const pageStyle = {
   container:
@@ -43,7 +43,11 @@ export default async function LessonPage({
       <SkillsLearned skillsTags={lesson.frontmatter.skillsLearned} />
       <section className={pageStyle.btnsContainer}>
         <Button variant="lessons" text="View More Lesson" href="/#lessons" />
-        <Button variant="secondary" text="Free Online Resources" href="/#" />
+        <Button
+          variant="secondary"
+          text="Free Online Resources"
+          href="/online-resources"
+        />
       </section>
     </main>
   );
