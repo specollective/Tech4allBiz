@@ -17,9 +17,7 @@ export async function generateStaticParams() {
 
   const paths = lessons
     .filter((lesson) => lesson.slug !== undefined)
-    .map((lesson) => ({
-      params: { slug: lesson.slug },
-    }));
+    .map((lesson) => ({ slug: lesson.slug }));
   return paths;
 }
 
