@@ -8,8 +8,8 @@ import Button from "@/app/ui/Buttons";
 
 const pageStyle = {
   container:
-    "w-full grid grid-cols-1 gap-6 md:grid-cols-2  md:gap-20 justify-items-center",
-  btnsContainer: "w-full flex gap-4 justify-items-left",
+    "w-full grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-20 justify-items-center",
+  btnsContainer: "w-full flex flex-col md:flex-row gap-4 justify-items-left",
 };
 
 export async function generateStaticParams() {
@@ -40,7 +40,7 @@ export default async function LessonPage({
       </section>
       <SkillsLearned skillsTags={lesson.frontmatter.skillsLearned} />
       <section className={pageStyle.btnsContainer}>
-        <Button variant="lessons" text="View More Lesson" href="/#lessons" />
+        <Button variant="lessons" text="View More Lessons" href="/#lessons" />
         <Button
           variant="secondary"
           text="Free Online Resources"

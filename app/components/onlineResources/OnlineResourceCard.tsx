@@ -1,10 +1,11 @@
 import { OnlineResourceCardProps } from "@/app/constants/types";
+import Buttons from "@/app/ui/Buttons";
 
 const styles = {
-  cardContainer: `flex flex-col gap-y-6`,
+  cardContainer: `w-full flex flex-col gap-y-6`,
   header: `basis-3 flex-grow-0 mb-3 font-bold text-2xl`,
   body: `flex-grow text-black`,
-  linkButton: `justify-item-end w-fit mt-auto inline-block bg-[#1282A2] text-white py-2 px-4 rounded hover:bg-[#0E6881] transition-colors text-center`,
+  buttonContainer: "w-full flex flex-col md:flex-row gap-4 justify-items-left",
 };
 
 export default function OnlineResourceCard({
@@ -16,14 +17,14 @@ export default function OnlineResourceCard({
     <div className={styles.cardContainer}>
       <div className={styles.header}>{title}</div>
       <p className={styles.body}>{description}</p>
-      <a
-        href={url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={styles.linkButton}
-      >
-        Visit Webpage
-      </a>
+      <div className={styles.buttonContainer}>
+        <Buttons
+          href={url}
+          variant="primary"
+          className="w-full"
+          text="Visit Webpage"
+        />
+      </div>
     </div>
   );
 }
