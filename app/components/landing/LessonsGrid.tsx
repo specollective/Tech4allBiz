@@ -17,7 +17,7 @@ const styles = {
     "flex flex-row justify-between gap-3 items-center py-3 text-sm text-black font-medium",
   lessonTime: "flex flex-row gap-2 items-center",
   lessonDescription: "line-clamp-3",
-  lessonLink: "pt-3",
+  buttonContainer: "w-full flex flex-col md:flex-row gap-4 justify-items-left",
 };
 
 export default async function LessonsGrid() {
@@ -35,17 +35,18 @@ export default async function LessonsGrid() {
               <div className={styles.lessonTimeContainer}>
                 By: {lesson.author}
                 <div className={styles.lessonTime}>
-                  <Image src={Clock} alt="Clock" />
+                  <Image src={Clock} alt="Clock" width={14} height={14} />
                   <p>{lesson.lessonTime}</p>
                 </div>
               </div>
               <p className={styles.lessonDescription}>{lesson.description}</p>
             </div>
-            <div className={styles.lessonLink}>
+            <div className={styles.buttonContainer}>
               <Button
                 href={`/${lesson.slug}`}
                 variant="primary"
-                text="Lesson Details"
+                text="View Lesson Details"
+                className="w-full"
               />
             </div>
           </div>

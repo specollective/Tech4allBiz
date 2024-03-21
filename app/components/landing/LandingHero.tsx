@@ -5,7 +5,7 @@ const styles = {
   leftColumn: "basis-1/3 flex flex-col py-8",
   heading: "text-[42px] font-bold mb-4",
   paragraph: "mb-8",
-  buttonContainer: "flex flex-wrap gap-4",
+  buttonContainer: "w-full flex flex-col md:flex-row gap-4 justify-items-left",
   rightColumn: "border basis-1/2 flex",
   videoIframe: "w-full h-auto aspect-video",
 };

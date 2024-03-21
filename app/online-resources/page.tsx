@@ -8,7 +8,7 @@ const pageStyles = {
   header: "md:basis-2/5 text-3xl bold",
   resourcesGrid:
     "grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-x-48 gap-y-20 py-5 md:py-10",
-  buttonContainer: "flex flex-row gap-4",
+  buttonContainer: "w-full flex flex-col md:flex-row gap-4 justify-items-left",
 };
 
 export default function OnlineResourcesPage() {
