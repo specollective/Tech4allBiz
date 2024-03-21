@@ -35,7 +35,7 @@ export default async function LessonsGrid() {
               <div className={styles.lessonTimeContainer}>
                 By: {lesson.author}
                 <div className={styles.lessonTime}>
-                  <Image src={Clock} alt="Clock" />
+                  <Image src={Clock} alt="Clock" width={14} height={14} />
                   <p>{lesson.lessonTime}</p>
                 </div>
               </div>
@@ -45,7 +45,7 @@ export default async function LessonsGrid() {
               <Button
                 href={`/${lesson.slug}`}
                 variant="primary"
-                text="Lesson Details"
+                text="View Lesson Details"
                 className="w-full"
               />
             </div>
