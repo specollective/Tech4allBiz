@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className}`}>
         <div
-          className={`w-full m-auto px-6 py-8 md:px-24 md:px-0 max-w-[1600px]`}
+          className={`w-full m-auto px-6 pb-10 md:px-24 md:px-0 max-w-[1600px]`}
         >
           <NavDesktop />
           <NavMobile />
