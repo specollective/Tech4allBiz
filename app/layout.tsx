@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
 import React from "react";
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import NavDesktop from "@/app/components/nav/NavDesktop";
 import Footer from "@/app/components/Footer";
 import NavMobile from "@/app/components/nav/NavMobile";
 
-const inter = Inter({ subsets: ["latin"] });
+const monts = Montserrat({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-monts",
+});
 
 export const metadata: Metadata = {
   title: "tech4all.biz",
@@ -21,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className}`}>
+      <body className={`${monts.variable}`}>
         <div
           className={`w-full m-auto px-6 pb-10 md:px-24 md:px-0 max-w-[1600px]`}
         >
