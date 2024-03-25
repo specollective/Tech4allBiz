@@ -21,16 +21,25 @@ export const Title1 = ({ id, children, className = "" }: TitleProps) => {
 
 export const Title2 = ({ children, className = "" }: TitleProps) => {
   const classes = cn(
-    "text-xl md:text-2xl font-arial leading-[36px] py-2",
+    "text-[36px] leading-[36px] py-2 font-monts font-semibold",
     className,
   );
-  return <h1 className={classes}>{children}</h1>;
+  return <h2 className={classes}>{children}</h2>;
 };
 
 export const Title3 = ({ children, className = "" }: TitleProps) => {
   const classes = cn(
-    "text-xl font-arial leading-[40px] md:leading-[60px] py-2",
+    "text-[24px] font-medium leading-normal py-1 font-monts",
     className,
   );
-  return <h1 className={classes}>{children}</h1>;
+  return <h3 className={classes}>{children}</h3>;
+};
+
+// Used for Card Header and Nav Links
+export const Title4 = ({ children, className = "" }: TitleProps) => {
+  const classes = cn(
+    "text-[16px] font-semibold leading-tight font-monts",
+    className,
+  );
+  return <div className={classes}>{children}</div>;
 };
