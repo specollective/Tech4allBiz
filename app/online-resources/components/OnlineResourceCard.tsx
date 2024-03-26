@@ -4,9 +4,10 @@ import { Title4 } from "@/app/ui/Titles";
 
 const styles = {
   cardContainer: `w-full flex flex-col gap-y-6`,
-  header: `basis-3 flex-grow-0 mb-3`,
+  header: `basis-3 flex-grow-0`,
   body: `flex-grow text-black`,
-  buttonContainer: "w-full flex flex-col md:flex-row gap-4 justify-items-left",
+  buttonContainer:
+    "w-full md:w-fit flex flex-col md:flex-row gap-4 justify-items-left",
 };
 
 export default function OnlineResourceCard({
