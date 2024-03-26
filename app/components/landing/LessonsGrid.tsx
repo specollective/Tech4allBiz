@@ -3,6 +3,8 @@ import Image from "next/image";
 import Clock from "@/public/clock.svg";
 import getFrontmatterSlug from "@/app/utils/getFrontmatterSlug";
 import Button from "@/app/ui/Buttons";
+import { Title3, Title4 } from "@/app/ui/Titles";
+import { BodyRegular, SmallText } from "@/app/ui/Texts";
 
 const styles = {
   container: "py-8",
@@ -12,9 +14,8 @@ const styles = {
   lessonCard:
     "flex flex-col gap-5 justify-between border border-[#1282A2] rounded-lg p-4 h-full",
   lessonDetails: "flex flex-col",
-  lessonHeader: "basis-16 text-lg font-semibold",
-  lessonTimeContainer:
-    "flex flex-row justify-between gap-3 items-center py-3 text-sm text-black font-medium",
+  lessonHeader: "basis-14",
+  lessonTimeContainer: "flex flex-row justify-between gap-3 items-center py-3",
   lessonTime: "flex flex-row gap-2 items-center",
   lessonDescription: "line-clamp-3",
   buttonContainer: "w-full flex flex-col md:flex-row gap-4 justify-items-left",
@@ -25,21 +26,23 @@ export default async function LessonsGrid() {
   return (
     <div id="lessons" className={styles.container}>
       <div className={styles.header}>
-        <h1 className={styles.title}>Lessons</h1>
+        <Title3>Lessons</Title3>
       </div>
       <div className={styles.gridContainer}>
         {lessons.map((lesson) => (
           <div key={lesson.slug} className={styles.lessonCard}>
             <div className={styles.lessonDetails}>
-              <h2 className={styles.lessonHeader}>{lesson.title}</h2>
+              <Title4 className={styles.lessonHeader}>{lesson.title}</Title4>
               <div className={styles.lessonTimeContainer}>
-                By: {lesson.author}
+                <SmallText>By: {lesson.author}</SmallText>
                 <div className={styles.lessonTime}>
                   <Image src={Clock} alt="Clock" width={14} height={14} />
-                  <p>{lesson.lessonTime}</p>
+                  <SmallText>{lesson.lessonTime}</SmallText>
                 </div>
               </div>
-              <p className={styles.lessonDescription}>{lesson.description}</p>
+              <BodyRegular className={styles.lessonDescription}>
+                {lesson.description}
+              </BodyRegular>
             </div>
             <div className={styles.buttonContainer}>
               <Button

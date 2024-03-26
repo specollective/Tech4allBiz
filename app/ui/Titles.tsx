@@ -9,7 +9,7 @@ type TitleProps = {
 
 export const Title1 = ({ id, children, className = "" }: TitleProps) => {
   const classes = cn(
-    "text-[64px] leading-[1.25] py-2 font-monts font-semibold",
+    "text-[24px] md:text-[64px] leading-[1.25] py-2 font-monts font-semibold",
     className,
   );
   return (
@@ -21,7 +21,7 @@ export const Title1 = ({ id, children, className = "" }: TitleProps) => {
 
 export const Title2 = ({ children, className = "" }: TitleProps) => {
   const classes = cn(
-    "text-[36px] leading-[36px] py-2 font-monts font-semibold",
+    "text-[24px] md:text-[36px] leading-[36px] py-2 font-monts font-semibold",
     className,
   );
   return <h2 className={classes}>{children}</h2>;
@@ -29,16 +29,16 @@ export const Title2 = ({ children, className = "" }: TitleProps) => {
 
 export const Title3 = ({ children, className = "" }: TitleProps) => {
   const classes = cn(
-    "text-[24px] font-medium leading-normal py-1 font-monts",
+    "text-[24px] leading-normal py-1 font-monts font-semibold",
     className,
   );
   return <h3 className={classes}>{children}</h3>;
 };
 
-// Used for Card Header and Nav Links
+// Used for Card Header
 export const Title4 = ({ children, className = "" }: TitleProps) => {
   const classes = cn(
-    "text-[16px] font-semibold leading-tight font-monts",
+    "text-[16px] md:text-[18px] font-semibold font-monts",
     className,
   );
   return <div className={classes}>{children}</div>;

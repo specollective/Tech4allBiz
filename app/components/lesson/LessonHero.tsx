@@ -1,5 +1,5 @@
 import { FrontmatterProps } from "@/app/constants/types";
-import { Title1 } from "@/app/ui/Titles";
+import { Title2 } from "@/app/ui/Titles";
 
 const styles = {
   container: "w-full flex flex-col py-5",
@@ -15,7 +15,7 @@ export default function LessonHero({ frontmatter }: FrontmatterProps) {
   return (
     <section className={styles.container}>
       <div className={styles.headerRow}>
-        <Title1 className={styles.title}>{frontmatter.title}</Title1>
+        <Title2 className={styles.title}>{frontmatter.title}</Title2>
         <div></div>
       </div>
       <div className={styles.contentRow}>

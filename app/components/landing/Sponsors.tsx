@@ -2,10 +2,11 @@ import Image from "next/image";
 import WSMA from "@/public/sponsors/WSMA_Logo.svg";
 import SPEC from "@/public/sponsors/SPEC_Logo.svg";
 import buildJustly from "@/public/sponsors/BuildJustly_Logo.svg";
+import { Title2 } from "@/app/ui/Titles";
 
 const styles = {
   sectionContainer: "w-full",
-  heading: "text-2xl font-bold mb-4",
+  heading: "mb-4",
   sponsorsContainer: "flex flex-col md:flex-row align-start gap-8",
   sponsorLogoContainer: "flex justify-start md:justify-center items-center",
 };
@@ -15,7 +16,7 @@ const SponsorsRow = () => {
 
   return (
     <section className={styles.sectionContainer}>
-      <h2 className={styles.heading}>Sponsors</h2>
+      <Title2 className={styles.heading}>Sponsors</Title2>
       <div className={styles.sponsorsContainer}>
         {sponsorLogos.map((logo, index) => (
           <div key={index} className={styles.sponsorLogoContainer}>

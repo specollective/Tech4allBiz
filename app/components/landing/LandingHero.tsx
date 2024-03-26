@@ -1,4 +1,5 @@
 import Button from "@/app/ui/Buttons";
+import { BodyRegular } from "@/app/ui/Texts";
 import { Title1 } from "@/app/ui/Titles";
 
 const styles = {
@@ -16,10 +17,10 @@ const LandingHero = () => {
     <section className={styles.container}>
       <div className={styles.leftColumn}>
         <Title1 className={styles.header}>Tech4allBiz</Title1>
-        <p className={styles.paragraph}>
+        <BodyRegular className={styles.paragraph}>
           Lorem ipsum dolor sit amet consectetur. Pellentesque a quis mauris
           tempus tortor aliquet arcu eu. A mauris urna duis euismod.
-        </p>
+        </BodyRegular>
         <div className={styles.buttonContainer}>
           <Button href="/#lessons" variant="lessons" text="View Lessons" />
           <Button

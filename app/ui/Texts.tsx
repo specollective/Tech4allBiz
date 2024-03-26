@@ -7,15 +7,15 @@ type TextProps = {
   id?: string;
 };
 
-export const TextHeader = ({ children, className = "" }: TextProps) => {
+export const BodyBold = ({ children, className = "" }: TextProps) => {
   const classes = cn(
-    "text-[18px] font-normal leading-normal font-sans",
+    "text-[18px] font-normal leading-normal font-sans font-bold",
     className,
   );
   return <p className={classes}>{children}</p>;
 };
 
-export const TextBody = ({ children, className = "" }: TextProps) => {
+export const BodyRegular = ({ children, className = "" }: TextProps) => {
   const classes = cn(
     "text-base font-normal leading-relaxed font-sans",
     className,
@@ -33,7 +33,7 @@ export const CardText = ({ children, className = "" }: TextProps) => {
 
 export const SmallText = ({ children, className = "" }: TextProps) => {
   const classes = cn(
-    "text-[12px] font-semibold leading-tight font-sans",
+    "text-[14px] font-semibold leading-tight font-sans",
     className,
   );
   return <span className={classes}>{children}</span>;
