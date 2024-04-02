@@ -1,29 +1,29 @@
-"use client";
+'use client'
 
-import React, { useState } from "react";
-import Image from "next/image";
-import MobileLogo from "@/public/Mobile_Logo.svg";
-import Link from "next/link";
+import React, { useState } from 'react'
+import Image from 'next/image'
+import MobileLogo from '@/public/Mobile_Logo.svg'
+import Link from 'next/link'
 
 const styles = {
-  container: "relative md:hidden",
-  header: "flex justify-between items-center py-4",
-  logo: "h-14 w-14",
-  hamburgerIcon: "w-6 h-6",
+  container: 'relative md:hidden',
+  header: 'flex justify-between items-center py-4',
+  logo: 'h-14 w-14',
+  hamburgerIcon: 'w-6 h-6',
   sidebar:
-    "fixed right-0 top-0 w-64 h-full bg-[#117D9C] text-white transform transition-transform duration-300 ease-in-out",
-  sidebarOpen: "translate-x-0",
-  sidebarClosed: "translate-x-full",
-  closeButton: "absolute top-0 right-0 p-4",
-  closeButtonIcon: "w-6 h-6",
-  navItems: "flex flex-col gap-y-5 px-5 py-20",
-};
+    'fixed right-0 top-0 w-64 h-full bg-[#117D9C] text-white transform transition-transform duration-300 ease-in-out',
+  sidebarOpen: 'translate-x-0',
+  sidebarClosed: 'translate-x-full',
+  closeButton: 'absolute top-0 right-0 p-4 ',
+  closeButtonIcon: 'w-6 h-6',
+  navItems: 'flex flex-col gap-y-5 px-5 py-20',
+}
 
 const MobileNavbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
-  const toggleSidebar = () => setIsOpen(!isOpen);
-  const closeSidebar = () => setIsOpen(false);
+  const toggleSidebar = () => setIsOpen(!isOpen)
+  const closeSidebar = () => setIsOpen(false)
 
   return (
     <div className={styles.container}>
@@ -36,7 +36,6 @@ const MobileNavbar = () => {
           onClick={toggleSidebar}
           className={styles.hamburgerIcon}
         >
-          {/* SVG for hamburger icon remains as is, styled by `styles.hamburgerIcon` */}
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
               strokeLinecap="round"
@@ -51,13 +50,23 @@ const MobileNavbar = () => {
       <div
         className={`${isOpen ? styles.sidebarOpen : styles.sidebarClosed} ${styles.sidebar}`}
       >
-        <button onClick={closeSidebar} className={styles.closeButton}>
-          {/* SVG for close button remains as is, styled by `styles.closeButton` */}
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <button
+          type="button"
+          onClick={closeSidebar}
+          className="absolute top-0 right-0 rounded-md p-6 text-white"
+        >
+          <svg
+            className="h-6 w-6"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="white"
+            aria-hidden="true"
+          >
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
-              strokeWidth={2}
+              strokeWidth="2"
               d="M6 18L18 6M6 6l12 12"
             />
           </svg>
@@ -70,7 +79,7 @@ const MobileNavbar = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default MobileNavbar;
+export default MobileNavbar
