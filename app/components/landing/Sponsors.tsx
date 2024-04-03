@@ -2,7 +2,7 @@ import Image from "next/image";
 import WSMA from "@/public/sponsors/WSMA_Logo.svg";
 import SPEC from "@/public/sponsors/SPEC_Logo.svg";
 import buildJustly from "@/public/sponsors/BuildJustly_Logo.svg";
-import { Title2 } from "@/app/ui/Titles";
+import { Title3 } from "@/app/ui/Titles";
 
 const styles = {
   sectionContainer: "w-full",
@@ -16,7 +16,7 @@ const SponsorsRow = () => {
 
   return (
     <section className={styles.sectionContainer}>
-      <Title2 className={styles.heading}>Sponsors</Title2>
+      <Title3 className={styles.heading}>Sponsors</Title3>
       <div className={styles.sponsorsContainer}>
         {sponsorLogos.map((logo, index) => (
           <div key={index} className={styles.sponsorLogoContainer}>
