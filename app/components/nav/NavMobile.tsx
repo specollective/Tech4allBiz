@@ -17,6 +17,7 @@ const styles = {
   closeButton: "absolute top-0 right-0 p-4 ",
   closeButtonIcon: "w-6 h-6",
   navItems: "flex flex-col gap-y-5 pl-12 py-20",
+  overlay: "fixed inset-0 bg-[#117D9C] bg-opacity-40 z-1",
 };
 
 const MobileNavbar = () => {
@@ -46,6 +47,8 @@ const MobileNavbar = () => {
           </svg>
         </button>
       </div>
+
+      {isOpen && <div className={styles.overlay} onClick={closeSidebar}></div>}
 
       <div
         className={`${isOpen ? styles.sidebarOpen : styles.sidebarClosed} ${styles.sidebar}`}
