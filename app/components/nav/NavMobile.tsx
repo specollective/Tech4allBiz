@@ -18,6 +18,8 @@ const styles = {
   closeButtonIcon: "w-6 h-6",
   navItems: "flex flex-col gap-y-5 pl-12 py-20",
   overlay: "fixed inset-0 bg-[#117D9C] bg-opacity-40 z-1",
+  linkStyle:
+    "hover:underline hover:underline-offset-4 decoration-2 hover:decoration-[#F0C808]",
 };
 
 const MobileNavbar = () => {
@@ -76,9 +78,23 @@ const MobileNavbar = () => {
         </button>
 
         <div className={styles.navItems}>
-          <Link href="/">Home</Link>
-          <Link href="/#lessons">Lessons</Link>
-          <Link href="/online-resources">Free Online Resources</Link>
+          <Link href="/" onClick={closeSidebar} className={styles.linkStyle}>
+            Home
+          </Link>
+          <Link
+            href="/#lessons"
+            onClick={closeSidebar}
+            className={styles.linkStyle}
+          >
+            Lessons
+          </Link>
+          <Link
+            href="/online-resources"
+            onClick={closeSidebar}
+            className={styles.linkStyle}
+          >
+            Free Online Resources
+          </Link>
         </div>
       </div>
     </div>
