@@ -16,13 +16,11 @@ const LandingHero = () => {
   return (
     <section className={styles.container}>
       <div className={styles.leftColumn}>
-        <Title3>
-          {" "}
-          Welcome to Tech4all.biz
-          {" "}
-        </Title3>
+        <Title3> Welcome to Tech4all.biz </Title3>
         <BodyRegular className={styles.paragraph}>
-          This website helps small business owners just like you build skills and confidence step by step by showing how other small business owners integrate technology into their businesses.
+          This website helps small business owners just like you build skills
+          and confidence step by step by showing how other small business owners
+          integrate technology into their businesses.
         </BodyRegular>
         <div className={styles.buttonContainer}>
           <Button href="/#lessons" variant="lessons" text="View Lessons" />
