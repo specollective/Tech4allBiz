@@ -18,12 +18,11 @@ const LandingHero = () => {
       <div className={styles.leftColumn}>
         <Title3>
           {" "}
-          Welcome by Vicky Tamaru, buildJUSTLY & Tech4AllBiz Founder{" "}
+          Welcome to Tech4all.biz
+          {" "}
         </Title3>
         <BodyRegular className={styles.paragraph}>
-          Welcome to Tech4all.biz, a website to help small business owners just
-          like you build skills and confidence step by step by showing how other
-          small business owners integrate technology into their business.
+          This website helps small business owners just like you build skills and confidence step by step by showing how other small business owners integrate technology into their businesses.
         </BodyRegular>
         <div className={styles.buttonContainer}>
           <Button href="/#lessons" variant="lessons" text="View Lessons" />
