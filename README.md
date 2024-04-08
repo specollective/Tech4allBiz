@@ -1,8 +1,5 @@
 # BuildJustly Tech4AllBiz
-Front end app for Tech4AllBiz project built by BuildJustly and Sustainable Progress and Equality Collective.
-
-Built in partnership by [Sustainable Progress and Equality Collective](https://specollective.org/) 
-
+Front end app for Tech4AllBiz project in development by [BuildJustly](https://buildjustly.org/) and Sustainable Progress and [Sustainable Progress and Equality Collective](https://specollective.org/).
 
 ## Getting Started
 
