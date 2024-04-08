@@ -1,10 +1,11 @@
-import type { Metadata } from "next";
 import React from "react";
+import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Montserrat } from "next/font/google";
-import "./globals.css";
 import NavDesktop from "@/app/components/nav/NavDesktop";
 import Footer from "@/app/components/Footer";
 import NavMobile from "@/app/components/nav/NavMobile";
+import "./globals.css";
 
 const monts = Montserrat({
   subsets: ["latin"],
@@ -15,7 +16,7 @@ const monts = Montserrat({
 export const metadata: Metadata = {
   title: "tech4all.biz",
   description:
-    "Enabling equitable usage and building of inclusive technology by buildJustly",
+    "Enabling equitable usage and building of inclusive technology by buildJustly.",
 };
 
 export default function RootLayout({
@@ -34,6 +35,7 @@ export default function RootLayout({
           {children}
         </div>
         <Footer />
+        <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS_ID as string} />
       </body>
     </html>
   );
