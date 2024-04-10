@@ -28,8 +28,8 @@ export const metadata: Metadata = {
       {
         url: "https://tech4all.biz/open-graph.png",
         secureUrl: "https://tech4all.biz/open-graph.png",
-        width: 1668,
-        height: 512,
+        width: 520,
+        height: 270,
         alt: "Preview image for Tech4all.biz",
       },
     ],
