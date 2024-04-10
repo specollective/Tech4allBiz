@@ -1,7 +1,8 @@
 export const hostPages = [
-  { name: "Lisa Clarke", website: "https://atlsearchgroup.com" },
-  { name: "Rosalinda Mendoza", website: "https://www.mocelmezcal.com/" },
-  { name: "Keita Williams", website: "https://www.successbully.com/" },
+  { name: "Alt Search Group", website: "https://atlsearchgroup.com" },
+  { name: "Mocel Mezcal Artesnal", website: "https://www.mocelmezcal.com/" },
+  { name: "Success Bully", website: "https://www.successbully.com/" },
   { name: "PCs for People", website: "https://pcsrefurbished.com/" },
-  { name: "Elisa Linton", website: "https://lintonagency.com" },
+  { name: "The Linton Agency", website: "https://lintonagency.com" },
 ];
+
