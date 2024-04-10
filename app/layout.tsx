@@ -30,8 +30,8 @@ export const metadata: Metadata = {
     modifiedTime: new Date().toISOString(),
     images: [
       {
-        url: "https://tech4all.biz/open-graph.png",
-        secureUrl: "https://tech4all.biz/open-graph.png",
+        url: "https://tech4all.biz/tech4allbiz-preview.png",
+        secureUrl: "https://tech4all.biz/tech4allbiz-preview.png",
         width: 520,
         height: 270,
         alt: "Preview image for Tech4all.biz",
