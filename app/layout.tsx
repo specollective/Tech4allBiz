@@ -17,6 +17,22 @@ export const metadata: Metadata = {
   title: "tech4all.biz",
   description:
     "Enabling equitable usage and building of inclusive technology by buildJustly.",
+  openGraph: {
+      title: "tech4all.biz",
+      description: "Enabling equitable usage and building of inclusive technology by buildJustly.",,
+      url: "https://tech4all.biz",
+      type: 'website',
+      siteName: "Tech4All.Biz",
+      images: [
+          {
+              url: "https://github.com/specollective/Tech4allBiz/blob/main/public/open-graph.png",
+              secureUrl: "https://github.com/specollective/Tech4allBiz/blob/main/public/open-graph.png",
+              width: 1668,
+              height: 512,
+              alt: "Preview image for Tech4all.biz",
+          }
+      ],
+  },
 };
 
 export default function RootLayout({
