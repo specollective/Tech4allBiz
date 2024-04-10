@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-
+import { Metadata } from "next";
 import { getLessons } from "@/app/utils/getLessons";
 import styles from "@/app/page.module.css";
 import LessonHero from "@/app/components/lesson/LessonHero";
@@ -19,6 +19,28 @@ export async function generateStaticParams() {
     .filter((lesson) => lesson.slug !== undefined)
     .map((lesson) => ({ slug: lesson.slug }));
   return paths;
+}
+
+interface PagePropsType {
+  params: { slug: string };
+}
+
+const SEO_DEFAULTS = {
+  title: "tech4all.biz",
+  description:
+    "Enabling equitable usage and building of inclusive technology by buildJustly.",
+};
+
+export async function generateMetadata({
+  params,
+}: PagePropsType): Promise<Metadata> {
+  const lessons = await getLessons();
+  const lesson = lessons.find((page) => page.slug === params.slug);
+
+  return {
+    title: lesson?.frontmatter.title || SEO_DEFAULTS.title,
+    description: lesson?.frontmatter.description || SEO_DEFAULTS.description,
+  };
 }
 
 export default async function LessonPage({
