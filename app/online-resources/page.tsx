@@ -11,6 +11,14 @@ const pageStyles = {
   buttonContainer: "w-full flex flex-col md:flex-row gap-4 justify-items-left",
 };
 
+export async function generateMetadata() {
+  return {
+    title: "Tech4All.biz - Free Online Resources",
+    description:
+      "Access free online resources to help you build skills and confidence step by step.",
+  };
+}
+
 export default function OnlineResourcesPage() {
   return (
     <main className={styles.main}>
