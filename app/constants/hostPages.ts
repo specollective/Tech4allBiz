@@ -5,4 +5,3 @@ export const hostPages = [
   { name: "PCs for People", website: "https://pcsrefurbished.com/" },
   { name: "The Linton Agency", website: "https://lintonagency.com" },
 ];
-
