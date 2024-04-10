@@ -20,10 +20,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "tech4all.biz",
     description:
-      "Enabling equitable usage and building of inclusive technology by buildJustly.",
+      "Tech4all.biz helps small business owners just like you build skills and confidence step by step by showing how other small business owners integrate technology into their businesses.",
     url: "https://tech4all.biz",
-    type: "website",
+    type: "article",
+    authors: ["BuildJustly"],
     siteName: "Tech4All.Biz",
+    publishedTime: new Date().toISOString(),
     images: [
       {
         url: "https://tech4all.biz/open-graph.png",
