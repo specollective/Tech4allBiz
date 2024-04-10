@@ -26,9 +26,8 @@ export const metadata: Metadata = {
     siteName: "Tech4All.Biz",
     images: [
       {
-        url: "https://github.com/specollective/Tech4allBiz/blob/main/public/open-graph.png",
-        secureUrl:
-          "https://github.com/specollective/Tech4allBiz/blob/main/public/open-graph.png",
+        url: "https://tech4all.biz/open-graph.png",
+        secureUrl: "https://tech4all.biz/open-graph.png",
         width: 1668,
         height: 512,
         alt: "Preview image for Tech4all.biz",
