@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   title: "tech4all.biz",
   description:
     "Enabling equitable usage and building of inclusive technology by buildJustly.",
+  authors: [{ name: "BuildJustly", url: "https://buildjustly.org/" }],
   openGraph: {
     title: "tech4all.biz",
     description:
@@ -26,6 +27,7 @@ export const metadata: Metadata = {
     authors: ["BuildJustly"],
     siteName: "Tech4All.Biz",
     publishedTime: new Date().toISOString(),
+    modifiedTime: new Date().toISOString(),
     images: [
       {
         url: "https://tech4all.biz/open-graph.png",
