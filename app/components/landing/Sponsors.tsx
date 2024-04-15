@@ -12,15 +12,21 @@ const styles = {
 };
 
 const SponsorsRow = () => {
-  const sponsorLogos = [WSMA, SPEC, buildJustly];
+  const sponsorLogos = [
+    { image: WSMA, link: "https://www.wamicrobiz.org/" },
+    { image: SPEC, link: "https://specollective.org/" },
+    { image: buildJustly, link: "https://buildjustly.org" },
+  ];
 
   return (
     <section className={styles.sectionContainer}>
       <Title3 className={styles.heading}>Sponsors</Title3>
       <div className={styles.sponsorsContainer}>
-        {sponsorLogos.map((logo, index) => (
+        {sponsorLogos.map((sponsor, index) => (
           <div key={index} className={styles.sponsorLogoContainer}>
-            <Image src={logo} alt={`Sponsor Logo ${index + 1}`} />
+            <a href={sponsor.link} target="_blank" rel="noopener noreferrer">
+              <Image src={sponsor.image} alt={`Sponsor Logo ${index + 1}`} />
+            </a>
           </div>
         ))}
       </div>
