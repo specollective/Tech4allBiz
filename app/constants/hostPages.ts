@@ -3,5 +3,8 @@ export const hostPages = [
   { name: "Mocel Mezcal Artesnal", website: "https://www.mocelmezcal.com/" },
   { name: "Success Bully", website: "https://www.successbully.com/" },
   { name: "PCs for People", website: "https://pcsrefurbished.com/" },
-  { name: "The Linton Agency", website: "https://lintonagency.com" },
+  {
+    name: "The Linton Agency",
+    website: "https://agents.farmers.com/wa/university-place/elisa-linton",
+  },
 ];
