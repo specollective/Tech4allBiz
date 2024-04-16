@@ -27,6 +27,6 @@ export const onlineResources = [
     title: "Small Business Digital Maturity Compass",
     description:
       "Discover in less than 5 minutes how your tech adoption stands with the AI for Social Progress Digital Maturity Compass and gain tailored actionable insights.",
-    link: "https://www.google.com/",
+    link: "https://microsoft-smb.ai4sp.org/",
   },
 ];
