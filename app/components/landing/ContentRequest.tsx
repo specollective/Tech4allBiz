@@ -3,7 +3,7 @@ import { contentRequestForm } from "@/app/constants/siteLinks";
 
 const styles = {
   text: "md:text-[18px] italic",
-  formLink: "text-blue-600 underline",
+  formLink: "text-[#1282A2] underline",
 };
 
 function ContentRequest() {
