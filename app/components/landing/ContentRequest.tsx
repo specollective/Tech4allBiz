@@ -1,4 +1,5 @@
 import { BodyRegular } from "@/app/ui/Texts";
+import { contentRequestForm } from "@/app/constants/siteLinks";
 
 const styles = {
   text: "md:text-[18px] italic",
@@ -10,7 +11,7 @@ function ContentRequest() {
     <BodyRegular className={styles.text}>
       Have requests for additional resources? Fill out our&nbsp;
       <a
-        href="https://bit.ly/3JTfH8N"
+        href={contentRequestForm}
         target="_blank"
         rel="noopener noreferrer"
         className={styles.formLink}
